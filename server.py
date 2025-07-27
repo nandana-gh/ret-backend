@@ -47,7 +47,7 @@ except OSError:
 
 # Initialize sentence transformer
 try:
-    sentence_model = SentenceTransformer('all-MiniLM-L6-v2')
+    sentence_model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
 except:
     print("Sentence transformer not available")
     sentence_model = None
