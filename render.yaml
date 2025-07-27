@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: python-backend
+    env: python
+    plan: free
+    repo:
+      type: git
+      url: https://github.com/nandana-gh/ret-backend.git
+    branch: master
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn server:app --host=0.0.0.0 --port=10000"  
+    autoDeploy: true
+    envVars:
+      - key: ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false 
